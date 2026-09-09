@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-immersive-translate-page-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/index-Fk6q97ia.css">
+<style>.logo{display:inline-block;height:50px;width:auto}.footer-brand .logo{height:100px}.nav a{text-decoration:none}.mobile-nav{display:none;flex-direction:column;background:#fff;padding:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);position:absolute;top:100%;left:0;right:0;z-index:100}.mobile-nav a{padding:0.75rem 1rem;border-bottom:1px solid #eee;text-decoration:none;color:#333}.current{color:#2563eb;font-weight:600}.topbar a.brand{display:inline-block;text-decoration:none;color:inherit}.nav a,.nav a button{display:inline-block;font-family:inherit}.rates-footer-cta{text-align:center;margin:3rem 0}.rates-footer-cta .primary{padding:0.75rem 2rem;font-size:1.1rem}@media(max-width:768px){.nav{display:none}}</style>
+    <title>S&M Study & Working Room - Staff Management</title>
+    <meta name="description" content="Staff management panel for S&M Study & Working Room.">
+    <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="icon" href="/favicon.svg">
+    <style>
+        .staff-section {
+            padding: 3rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .staff-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .staff-form-group {
+            margin-bottom: 1.25rem;
+        }
+        .staff-form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .staff-form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        .staff-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            flex-wrap: wrap;
+        }
+        .staff-tab {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .staff-tab.active {
+            color: #333;
+            border-bottom-color: #2563eb;
+        }
+ .staff-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .staff-table th, .staff-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .staff-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .staff-table tr:hover td {
+            background: #f8f9fa;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-confirmed { background: #d1fae5; color: #065f46; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-cancelled { background: #fee2e2; color: #991b2b; }
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .staff-stat {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .staff-stat .num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        .staff-stat .label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        .btn-back {
+            background: #f1f5f9;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<main>
+<header class="topbar">
+    <a href="home.html" class="brand"><img src="./images/logo.png" alt="S&M Study & Working Room" class="logo"></a>
+    <nav class="nav">
+        <a href="home.html">Home</a>
+        <a href="home.html#spaces">Spaces</a>
+        <a href="Rates.html">Rates</a>
+        <a href="Staff Management.html" class="staff-nav current">Staff Management</a>
+        <a href="Book a Space.html" class="book-nav">Book a space</a>
+    </nav>
+    <button class="menu" aria-label="Menu" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+            <path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></svg>
+    </button>
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="home.html">Home</a>
+        <a href="home.html#spaces">Spaces</a>
+        <a href="Rates.html">Rates</a>
+        <a href="Staff Management.html">Staff Management</a>
+        <a href="Book a Space.html">Book a space</a>
+    </div>
+</header>
+
+<section class="staff-section">
+    <div id="login-screen">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2>Staff Login</h2>
+            <p style="color: #666;">Access the management dashboard</p>
+        </div>
+        <div class="staff-card">
+            <div class="staff-form-group">
+                <label for="staff-username">Username</label>
+                <input type="text" id="staff-username" placeholder="Enter username">
+            </div>
+            <div class="staff-form-group">
+                <label for="staff-password">Password</label>
+                <input type="password" id="staff-password" placeholder="Enter password">
+            </div>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <button class="primary" id="login-btn" style="width: 100%;">Login</button>
+            </div>
+            <div id="login-error" class="error-msg">Invalid credentials. Try username: staff, password: S&M2024</div>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="home.html" class="btn-back">Back to homepage</a>
+        </div>
+    </div>
+
+    <div id="dashboard" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <button class="btn-back" id="logout-btn">Logout</button>
+            <div style="text-align: right;">
+                <b style="color: #333;">Welcome, <span id="logged-in-user"></span></b>
+            </div>
+        </div>
+
+        <div class="staff-grid">
+            <div class="staff-stat">
+                <div class="num" id="stat-total">0</div>
+                <div class="label">Total Bookings</div>
+            </div>
+            <div class="staff-stat">
+                <div class="num" id="stat-confirmed">0</div>
+                <div class="label">Confirmed</div>
+            </div>
+            <div class="staff-stat">
+                <div class="num" id="stat-pending">0</div>
+                <div class="label">Pending</div>
+            </div>
+            <div class="staff-stat">
+                <div class="num" id="stat-cancelled">0</div>
+                <div class="label">Cancelled</div>
+            </div>
+        </div>
+
+        <div class="staff-tabs">
+            <button class="staff-tab active" onclick="switchTab('bookings')">Bookings</button>
+            <button class="staff-tab" onclick="switchTab('availability')">Availability</button>
+        </div>
+
+        <div id="bookings-tab">
+            <table class="staff-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Space</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-list">
+                </tbody>
+            </table>
+            <div id="no-bookings" style="text-align: center; padding: 3rem; color: #999; display: none;">No bookings found.</div>
+        </div>
+
+        <div id="availability-tab" style="display: none;">
+            <h3 style="margin-bottom: 1rem;">Space Availability</h3>
+            <table class="staff-table">
+                <thead>
+                    <tr>
+                        <th>Space</th>
+                        <th>Total Seats</th>
+                        <th>Available Today</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Large Study Room</td>
+                        <td>16</td>
+                        <td id="avail-large">16</td>
+                        <td><span class="status-badge status-confirmed">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td>Flexible / Meeting Room</td>
+                        <td>8</td>
+                        <td id="avail-flex">8</td>
+                        <td><span class="status-badge status-confirmed">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td>Private Online Meeting</td>
+                        <td>Private use</td>
+                        <td id="avail-private">1</td>
+                        <td><span class="status-badge status-confirmed">Open</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="brand footer-brand"><img src="./images/logo-footer.png" alt="S&M Study & Working Room" class="logo"></div>
+    <div>
+        <b>Visit us</b>
+        <p>Daanbantayan, Cebu, Philippines</p>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true">
+            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>Near Cebu Technological University</p>
+    </div>
+    <div>
+        <b>Contact</b>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>Phone number to be added</p>
+        <p>Facebook Messenger to be added</p>
+    </div>
+    <small>© 2026 S&amp;M Study &amp; Working Room</small>
+</footer>
+</main>
+
+<script>
+const VALID_CREDENTIALS = { username: 'staff', password: 'S&M2024' };
+
+let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+
+function updateStats() {
+    document.getElementById('stat-total').textContent = bookings.length;
+    document.getElementById('stat-confirmed').textContent = bookings.filter(b => b.status === 'confirmed').length;
+    document.getElementById('stat-pending').textContent = bookings.filter(b => b.status === 'pending').length;
+    document.getElementById('stat-cancelled').textContent = bookings.filter(b => b.status === 'cancelled').length;
+}
+
+function renderBookings() {
+    const list = document.getElementById('bookings-list');
+    const noBookings = document.getElementById('no-bookings');
+    list.innerHTML = '';
+    if (bookings.length === 0) {
+        noBookings.style.display = 'block';
+    } else {
+        noBookings.style.display = 'none';
+        bookings.forEach((b, i) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + escapeHtml(b.name) + '</td><td>' + escapeHtml(b.email) + '</td><td>' + escapeHtml(b.space) + '</td><td>' + escapeHtml(b.date) + '</td><td>' + escapeHtml(b.time) + '</td><td><span class="status-badge status-' + b.status + '">' + b.status + '</span></td><td><button onclick="updateStatus(' + i + ')" style="background:none;border:none;color:#2563eb;cursor:pointer;font-size:0.85rem;">Change status</button></td>';
+            list.appendChild(tr);
+        });
+    }
+    updateStats();
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function updateStatus(index) {
+    const current = bookings[index].status;
+    const next = current === 'confirmed' ? 'cancelled' : current === 'cancelled' ? 'pending' : 'confirmed';
+    const cycle = ['pending', 'confirmed', 'cancelled', 'pending'];
+    const idx = cycle.indexOf(current);
+    bookings[index].status = cycle[idx + 1];
+    localStorage.setItem('bookings', JSON.stringify(bookings));
+    renderBookings();
+}
+
+function switchTab(tabName) {
+    document.querySelectorAll('.staff-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('[id$="-tab"]').forEach(t => t.style.display = 'none');
+    document.querySelector('.staff-tab[onclick="switchTab(\'' + tabName + '\')"]').classList.add('active');
+    document.getElementById(tabName + '-tab').style.display = 'block';
+}
+
+document.getElementById('login-btn').addEventListener('click', function() {
+    const username = document.getElementById('staff-username').value;
+    const password = document.getElementById('staff-password').value;
+    if (username === VALID_CREDENTIALS.username && password === VALID_CREDENTIALS.password) {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        document.getElementById('logged-in-user').textContent = username;
+        renderBookings();
+    } else {
+        document.getElementById('login-error').style.display = 'block';
+    }
+});
+
+document.getElementById('logout-btn').addEventListener('click', function() {
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'block';
+    document.getElementById('staff-username').value = '';
+    document.getElementById('staff-password').value = '';
+    document.getElementById('login-error').style.display = 'none';
+});
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    var nav = document.getElementById('mobile-nav');
+    if (nav.style.display === 'block') {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'block';
+    }
+});
+
+window.addEventListener('resize', function() {
+    var nav = document.getElementById('mobile-nav');
+    if (window.innerWidth > 768) {
+        nav.style.display = 'none';
+    }
+});
+</script>
+</body>
+</html>
