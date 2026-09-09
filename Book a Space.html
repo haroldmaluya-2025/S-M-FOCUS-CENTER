@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-immersive-translate-page-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/index-Fk6q97ia.css">
+<style>.logo{display:inline-block;height:50px;width:auto}.footer-brand .logo{height:100px}.nav a{text-decoration:none}.mobile-nav{display:none;flex-direction:column;background:#fff;padding:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);position:absolute;top:100%;left:0;right:0;z-index:100}.mobile-nav a{padding:0.75rem 1rem;border-bottom:1px solid #eee;text-decoration:none;color:#333}.current{color:#2563eb;font-weight:600}.topbar a.brand{display:inline-block;text-decoration:none;color:inherit}.nav a,.nav a button{display:inline-block;font-family:inherit}@media(max-width:768px){.nav{display:none}}</style>
+    <title>S&M Study & Working Room - Book a Space</title>
+    <meta name="description" content="Book a study space or meeting room at S&M Study & Working Room in Daanbantayan, Cebu.">
+    <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="icon" href="/favicon.svg">
+    <style>
+        .booking-section {
+            padding: 3rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .booking-form-container {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-row-single {
+            margin-bottom: 1.5rem;
+        }
+        .booking-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .booking-input, .booking-select, .booking-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        .booking-input:focus, .booking-select:focus, .booking-textarea:focus {
+            outline: 2px solid #2563eb;
+            border-color: #2563eb;
+        }
+        .booking-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .rates-summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .rates-summary h4 {
+            margin: 0 0 0.75rem 0;
+            color: #333;
+        }
+        .rate-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .rate-option:last-child {
+            border-bottom: none;
+        }
+        .rate-option input[type="radio"] {
+            margin-right: 0.75rem;
+        }
+        .confirmation {
+            text-align: center;
+            padding: 3rem;
+            background: #d1fae5;
+            border-radius: 12px;
+            display: none;
+        }
+        .confirmation h3 {
+            color: #065f46;
+            margin-bottom: 0.5rem;
+        }
+        .confirmation .ref {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #2563eb;
+            margin: 1rem 0;
+        }
+        .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .required::after {
+            content: " *";
+            color: #ef4444;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #eee;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<main>
+<header class="topbar">
+    <a href="home.html" class="brand"><img src="./images/logo.png" alt="S&M Study & Working Room" class="logo"></a>
+    <nav class="nav">
+        <a href="home.html">Home</a>
+        <a href="home.html#spaces">Spaces</a>
+        <a href="Rates.html">Rates</a>
+        <a href="Staff Management.html" class="staff-nav">Staff Management</a>
+        <a href="Book a Space.html" class="book-nav current">Book a space</a>
+    </nav>
+    <button class="menu" aria-label="Menu" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+            <path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></svg>
+    </button>
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="home.html">Home</a>
+        <a href="home.html#spaces">Spaces</a>
+        <a href="Rates.html">Rates</a>
+        <a href="Staff Management.html">Staff Management</a>
+        <a href="Book a Space.html">Book a space</a>
+    </div>
+</header>
+
+<section class="booking-section">
+    <div class="eyebrow" style="text-align: center; margin-bottom: 1rem;">DAANBANTAYAN, CEBU</div>
+    <h1 style="text-align: center; margin-bottom: 2rem;">Book your space</h1>
+
+    <div class="booking-form-container">
+        <form id="booking-form">
+            <p style="color: #666; margin-bottom: 1.5rem;">Fill in your details and choose your preferred space and time. We'll confirm your reservation.</p>
+
+            <div class="form-row">
+                <div class="form-row-single">
+                    <label class="booking-label required" for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="booking-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-row-single">
+                    <label class="booking-label required" for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="booking-input" placeholder="Enter your email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row-single">
+                    <label class="booking-label required" for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="booking-input" placeholder="e.g. +63 912 345 6789" required>
+                </div>
+                <div class="form-row-single">
+                    <label class="booking-label required" for="space">Choose a Space</label>
+                    <select id="space" name="space" class="booking-select" required>
+                        <option value="">Select a space</option>
+                        <option value="Large Study Room">Large Study Room (16 seats)</option>
+                        <option value="Flexible / Meeting Room">Flexible / Meeting Room (8 seats)</option>
+                        <option value="Private Online Meeting">Private Online Meeting</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row-single">
+                    <label class="booking-label required" for="date">Date</label>
+                    <input type="date" id="date" name="date" class="booking-input" required>
+                </div>
+                <div class="form-row-single">
+                    <label class="booking-label required" for="time">Start Time</label>
+                    <input type="time" id="time" name="time" class="booking-input" required>
+                </div>
+            </div>
+
+            <div class="form-row-single">
+                <label class="booking-label required" for="duration">Duration</label>
+                <select id="duration" name="duration" class="booking-select" required>
+                    <option value="">Select duration</option>
+                    <option value="1">1 Hour (₱5)</option>
+                    <option value="5">Half-Day Pass - Up to 5 hours (₱50)</option>
+                    <option value="10">Day Pass - 8:00 AM – 6:00 PM (₱80)</option>
+                    <option value="14">All-Day Pass - 8:00 AM – 11:00 PM (₱50)</option>
+                    <option value="5e">Evening Pass - 6:00 PM – 11:00 PM (₱20)</option>
+                    <option value="168">7-Day Membership (₱1,200)</option>
+                    <option value="240">10-Day Membership (₱1,750)</option>
+                    <option value="360">15-Day Membership (₱2,600)</option>
+                    <option value="720">1-Month Membership (₱3,500)</option>
+                </select>
+            </div>
+
+            <div class="form-row-single">
+                <label class="booking-label" for="seats">Number of Seats</label>
+                <select id="seats" name="seats" class="booking-select">
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <option value="4">4 people</option>
+                    <option value="5">5 people</option>
+                    <option value="6+">6+ people</option>
+                </select>
+            </div>
+
+            <div class="form-row-single">
+                <label class="booking-label" for="requests">Special Requests</label>
+                <textarea id="requests" name="requests" class="booking-textarea" placeholder="Any special requirements or notes for your visit..."></textarea>
+            </div>
+
+            <div class="rates-summary">
+                <h4>Pricing Summary</h4>
+                <div class="rate-option">
+                    <span>Selected Pass</span>
+                    <b id="price-display">₱0</b>
+                </div>
+                <div class="rate-option">
+                    <span>Tax (5%)</span>
+                    <b id="tax-display">₱0</b>
+                </div>
+                <div class="rate-option" style="border-top: 2px solid #333; margin-top: 0.5rem; padding-top: 0.75rem;">
+                    <span style="font-weight: 700;">Total</span>
+                    <b id="total-display" style="font-size: 1.1rem;">₱0</b>
+                </div>
+            </div>
+
+            <div id="form-error" class="error-msg"></div>
+
+            <div class="form-actions">
+                <button type="button" class="light-btn" id="reset-btn">Reset</button>
+                <button type="submit" class="primary">Confirm Booking
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true">
+                        <path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </button>
+            </div>
+        </form>
+
+        <div class="confirmation" id="confirmation">
+            <h3>Booking Confirmed!</h3>
+            <p>Thank you for your reservation. A confirmation has been sent to your email and to the staff.</p>
+            <div class="ref">Reference #: <span id="booking-ref"></span></div>
+            <p style="color: #666; margin-top: 1rem;">You can view and manage your booking through the Staff Management panel.</p>
+            <button class="primary" id="new-booking-btn">Book Another Space</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="brand footer-brand"><img src="./images/logo-footer.png" alt="S&M Study & Working Room" class="logo"></div>
+    <div>
+        <b>Visit us</b>
+        <p>Daanbantayan, Cebu, Philippines</p>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true">
+            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>Near Cebu Technological University</p>
+    </div>
+    <div>
+        <b>Contact</b>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>Phone number to be added</p>
+        <p>Facebook Messenger to be added</p>
+    </div>
+    <small>© 2026 S&amp;M Study &amp; Working Room</small>
+</footer>
+</main>
+
+<script>
+const PRICE_MAP = {
+    '1': 5, '5': 50, '10': 80, '14': 50, '5e': 20,
+    '168': 1200, '240': 1750, '360': 2600, '720': 3500
+};
+
+/* Email notifications configured for haroldmaluya2021@gmail.com via Formspree
+Form ID: moeqpbzl
+Endpoint: https://formspree.io/f/moeqpbzl
+*/
+const FORM_ID = 'moeqpbzl';
+const OWNER_EMAIL = 'haroldmaluya2021@gmail.com';
+
+function updatePricing() {
+    const duration = document.getElementById('duration').value;
+    const price = PRICE_MAP[duration] || 0;
+    const tax = price * 0.05;
+    const total = price + tax;
+    document.getElementById('price-display').textContent = '₱' + price.toFixed(2);
+    document.getElementById('tax-display').textContent = '₱' + tax.toFixed(2);
+    document.getElementById('total-display').textContent = '₱' + total.toFixed(2);
+}
+
+function generateRef() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let ref = '';
+    for (let i = 0; i < 8; i++) {
+        ref += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return ref;
+}
+
+document.getElementById('duration').addEventListener('change', updatePricing);
+
+document.getElementById('reset-btn').addEventListener('click', function() {
+    document.getElementById('booking-form').reset();
+    document.getElementById('price-display').textContent = '₱0.00';
+    document.getElementById('tax-display').textContent = '₱0.00';
+    document.getElementById('total-display').textContent = '₱0.00';
+    document.getElementById('form-error').style.display = 'none';
+    document.getElementById('confirmation').style.display = 'none';
+    document.getElementById('booking-form').style.display = 'block';
+});
+
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const space = document.getElementById('space').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const duration = document.getElementById('duration').value;
+
+    if (!name || !email || !phone || !space || !date || !time || !duration) {
+        document.getElementById('form-error').textContent = 'Please fill in all required fields marked with *';
+        document.getElementById('form-error').style.display = 'block';
+        return;
+    }
+
+    document.getElementById('form-error').style.display = 'none';
+
+    const price = PRICE_MAP[duration] || 0;
+    const ref = generateRef();
+    const booking = {
+        id: ref,
+        name: name,
+        email: email,
+        phone: phone,
+        space: space,
+        date: date,
+        time: time,
+        duration: duration,
+        price: price,
+        status: 'pending'
+    };
+
+    let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+    bookings.push(booking);
+    localStorage.setItem('bookings', JSON.stringify(bookings));
+
+    sendBookingNotification(booking, ref);
+
+    document.getElementById('booking-ref').textContent = ref;
+    document.getElementById('booking-form').style.display = 'none';
+    document.getElementById('confirmation').style.display = 'block';
+});
+
+function sendBookingNotification(booking, ref) {
+    fetch('https://formspree.io/f/' + FORM_ID, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: booking.name,
+            email: booking.email,
+            phone: booking.phone,
+            space: booking.space,
+            date: booking.date,
+            time: booking.time,
+            duration: booking.duration,
+            price: booking.price,
+            reference: ref,
+            _subject: 'New Booking at S&M Study & Working Room',
+            _replyto: booking.email
+        })
+    }).then(function(response) {
+        if (response.ok) {
+            console.log('Booking notification emailed to ' + OWNER_EMAIL);
+        }
+    }).catch(function(error) {
+        console.error('Failed to send email:', error);
+    });
+}
+
+document.getElementById('new-booking-btn').addEventListener('click', function() {
+    document.getElementById('reset-btn').click();
+});
+
+function setMinDate() {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    document.getElementById('date').min = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('date').value = yyyy + '-' + mm + '-' + dd;
+}
+setMinDate();
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    var nav = document.getElementById('mobile-nav');
+    if (nav.style.display === 'block') {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'block';
+    }
+});
+
+window.addEventListener('resize', function() {
+    var nav = document.getElementById('mobile-nav');
+    if (window.innerWidth > 768) {
+        nav.style.display = 'none';
+    }
+});
+</script>
+</body>
+</html>
